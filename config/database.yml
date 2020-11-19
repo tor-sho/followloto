@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: followloto_production
-  username: followloto
-  password: <%= ENV['FOLLOWLOTO_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
