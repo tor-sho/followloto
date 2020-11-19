@@ -1,0 +1,11 @@
+// Place all the styles related to the session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.again_btns{
+  position: absolute;
+  top: 50%; /*親要素を起点に上から50%*/
+  left: 50%;  /*親要素を起点に左から50%*/
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  text-align:center;
+}
