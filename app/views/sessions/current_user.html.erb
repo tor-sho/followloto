@@ -1,0 +1,5 @@
+<% if !Follower.find_by(screen_name: @current_user.nickname).nil? %>
+  <button type="button" class="btn btn-lg btn-primary" disabled>応募完了</button>
+<% else %>
+  <%= button_to "@yoneappをフォローして応募", {controller: 'sessions', action: 'follow'}, {method: :get, class: "btn btn-primary"} %>
+<% end %>
