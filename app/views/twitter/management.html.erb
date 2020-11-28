@@ -1,0 +1,38 @@
+<p>応募人数：<%= Applicant.all.count %>人</p>
+
+<table border="1">
+  <tr>
+    <th>番号</th>
+    <th>名前</th>
+    <th>ユーザ名</th>
+    <th>日付</th>
+  </tr>
+
+    <% @applicants.each do |applicant| %>
+      <tr>
+        <td><%= applicant.id %></td>
+        <td><%= applicant.name %></td>
+        <td><%= applicant.screen_name %></td>
+        <td><%= applicant.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+      </tr>
+    <% end %>
+
+</table>
+
+<p>当選者</p>
+<table border="1">
+  <tr>
+    <th>番号</th>
+    <th>名前</th>
+    <th>ユーザ名</th>
+  </tr>
+
+    <% @winners.each do |winner| %>
+      <tr>
+        <td><%= winner.number %></td>
+        <td><%= winner.name %></td>
+        <td><%= winner.screen_name %></td>
+      </tr>
+    <% end %>
+
+</table>

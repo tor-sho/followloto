@@ -1,7 +1,15 @@
-<div class="again_btns">
-  <div class="follow_btn">
-    <a href="https://twitter.com/yoneapp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @yoneapp</a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  <%= button_to "応募", {controller: 'sessions', action: 'friendship'}, {method: :get, class: "btn btn-primary apply_btn"} %>
+<div class="alert alert-danger alert-follow" role="alert">
+  フォローしてください
+</div>
+
+
+<div class="follow-btn-again">
+  <p>フォローはこちらから</p>
+  <p>↓↓</p>
+  <a href="https://twitter.com/yoneapp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @yoneapp</a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div class="apply-btn">
+  <%= button_to "応募", {controller: 'sessions', action: 'friendship'}, {method: :get, class: "btn btn-warning"} %>
 </div>

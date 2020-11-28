@@ -1,23 +1,6 @@
 class SessionsController < ApplicationController
 
-  def log_in(user)
-    session[:uid] = user.uid
-  end
 
-  def current_user
-    if session[:uid]
-      @current_user ||= User.find_by(uid: session[:uid])
-    end
-  end
-
-  def logged_in?
-    !current_user.nil?
-  end
-
-  def log_out
-    session.delete(:uid)
-    @current_user = nil
-  end
 
 
   def create
@@ -66,6 +49,7 @@ class SessionsController < ApplicationController
     client = twitter_client
     result = client.friendship(@current_user.nickname, "@yoneapp")
     if result.source.following?
+      Applicant.create(:name => @current_user.name, :screen_name => @current_user.nickname)
       redirect_to action: :finish
     else
       redirect_to action: :again

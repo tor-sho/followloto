@@ -18,9 +18,22 @@
  @import "bootstrap";
 
 
- .log_btn, .fin_btn{
-   position: absolute;
-   top: 50%; /*親要素を起点に上から50%*/
-   left: 50%;  /*親要素を起点に左から50%*/
-   -webkit-transform: translateY(-50%) translateX(-50%);
- }
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #def7ff;
+  height: 80px;
+}
+
+.site-header-wrapper{
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.followloto{
+  color: #222;
+  font-weight: bold;
+  font-size: 40px;
+}
