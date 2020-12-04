@@ -17,7 +17,8 @@ class TwitterController < ApplicationController
         FinalApplicant.create(:number => applicant.id, :name => applicant.name, :screen_name => applicant.screen_name)
       end
     end
-    @winners = FinalApplicant.order("RAND()").limit(1)
+    rand = Rails.env.production? ? "RANDOM()" : "rand()"
+    @winners = FinalApplicant.order(rand).limit(1)
     @result = 'はずれ'
     @winners.each do |winner|
       if @current_user.nickname == winner.screen_name
