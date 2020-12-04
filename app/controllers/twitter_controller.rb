@@ -19,6 +19,10 @@ class TwitterController < ApplicationController
     end
     rand = Rails.env.production? ? "RANDOM()" : "rand()"
     @winners = FinalApplicant.order(rand).limit(1)
+    @winners.each do |winner|
+      Winner.create(:number => winner.number, :name => winner.name, :screen_name => winner.screen_name)
+    end
+
     @result = 'はずれ'
     @winners.each do |winner|
       if @current_user.nickname == winner.screen_name
@@ -29,7 +33,8 @@ class TwitterController < ApplicationController
   end
 
   def management
-    lottery
+    @applicants = Applicant.all
+    @winners = Winner.all
   end
 
 =begin
