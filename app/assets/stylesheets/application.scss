@@ -19,21 +19,23 @@
 
 
 header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #def7ff;
-  height: 80px;
 }
 
 .site-header-wrapper{
-  text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  height: 80px;
+  margin: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .followloto{
   color: #222;
   font-weight: bold;
   font-size: 40px;
+}
+
+.log-out-btn{
+  padding: 10px;
 }
