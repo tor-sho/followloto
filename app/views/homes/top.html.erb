@@ -1,13 +1,52 @@
-<div class="box27">
-    <span class="box-title">応募条件</span>
-    <p>@yoneappをフォローするだけ！</p>
-    <p class="follow-btn">フォローはこちらから →</p>
-    <div class="follow-btn">
-      <a href="https://twitter.com/yoneapp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @yoneapp</a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-</div>
 
-<div class="log-btn">
-  <a type="button" class="btn btn-warning" href="/auth/twitter">Twitterログインして応募</a>
-</div>
+<% if @current_user == nil %>
+
+  <div class="box1">
+      <span class="box1-title">応募条件</span>
+      <p>@yoneappをフォローするだけ！</p>
+      <p class="follow-btn">フォローはこちらから →</p>
+      <div class="follow-btn">
+        <a href="https://twitter.com/yoneapp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @yoneapp</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+  </div>
+
+  <div class="log-btn">
+    <a type="button" class="btn btn-warning" href="/auth/twitter">Twitterログインして応募</a>
+  </div>
+
+
+<% elsif @result.source.following? %>
+
+  <% Applicant.create(:name => @current_user.name, :screen_name => @current_user.nickname) %>
+  <div class="fin-btn">
+    <button type="button" class="btn btn-lg btn-primary" disabled>応募完了</button>
+  </div>
+
+  <div class="wait">
+    <i class="far fa-grin-beam fa-3x"></i>
+    <div class="balloon1-left">
+      <p>抽選結果の発表までしばらくお待ちください。</p>
+    </div>
+  </div>
+
+<% else %>
+
+  <div class="alert alert-danger alert-follow" role="alert">
+    フォローしてください
+  </div>
+
+
+  <div class="follow-btn-again">
+    <p>フォローはこちらから</p>
+    <p>↓↓</p>
+    <a href="https://twitter.com/yoneapp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @yoneapp</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+
+  <div class="apply-btn">
+    <%= button_to "応募", {controller: 'homes', action: 'top'}, {method: :get, class: "btn btn-warning"} %>
+  </div>
+
+
+<% end %>

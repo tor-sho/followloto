@@ -1,37 +1,131 @@
-.box27 {
-    width: 400px;
-    position: relative;
-    margin: 10em auto 2em auto;
-    padding: 0.5em 1em;
-    border: solid 3px #62c1ce;
-}
-.box27 .box-title {
-    position: absolute;
+
+@media screen and (min-width: 479px) {
+
+  .box1 {
+      width: 400px;
+      position: relative;
+      margin: 10em auto 2em auto;
+      padding: 0.5em 1em;
+      border: solid 3px #62c1ce;
+  }
+  .box1 .box1-title {
+      position: absolute;
+      display: inline-block;
+      top: -27px;
+      left: -3px;
+      padding: 0 9px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 17px;
+      background: #62c1ce;
+      color: #ffffff;
+      font-weight: bold;
+      border-radius: 5px 5px 0 0;
+  }
+  .box1 p {
+      margin: 5px;
+      padding: 0;
+  }
+  .follow-btn {
     display: inline-block;
-    top: -27px;
-    left: -3px;
-    padding: 0 9px;
-    height: 25px;
-    line-height: 25px;
-    font-size: 17px;
-    background: #62c1ce;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 5px 5px 0 0;
-}
-.box27 p {
-    margin: 5px;
-    padding: 0;
-}
-.follow-btn {
-  display: inline-block;
-  vertical-align: middle;
+    vertical-align: middle;
+  }
+
+  .log-btn {
+    margin-top: 100px;
+    text-align:center;
+  }
+  .log-btn a {
+    font-size: 30px;
+  }
+
 }
 
-.log-btn {
-  margin-top: 100px;
+
+@media screen and (max-width: 479px) {
+
+}
+
+
+
+
+
+
+.fin-btn {
+  margin: 200px 0 50px 0;
   text-align:center;
 }
-.log-btn a {
+
+.fin-btn button {
+  font-size: 30px;
+}
+
+.wait {
+  text-align: center;
+}
+
+.balloon1-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #FFF;
+  border: solid 3px #555;
+  box-sizing: border-box;
+}
+
+.balloon1-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #FFF;
+  z-index: 2;
+}
+
+.balloon1-left:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
+}
+
+.balloon1-left p {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.alert-follow {
+  text-align: center;
+  font-size: 18px;
+}
+
+.follow-btn-again {
+  text-align: center;
+  margin: 100px 0 50px 0;
+}
+
+.follow-btn-again p {
+  font-size: 20px;
+}
+
+.apply-btn {
+  text-align: center;
+}
+
+.apply-btn .btn {
   font-size: 30px;
 }
